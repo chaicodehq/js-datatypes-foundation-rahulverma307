@@ -47,20 +47,62 @@
  */
 export function getChaiOrderLength(order) {
   // Your code here
+  if (typeof order !=="string"){
+    return -1;
+  }
+  let cleanOrder=order.trim();
+  return cleanOrder.length;
 }
 
 export function shoutChaiOrder(order) {
-  // Your code here
+  if (typeof order!=="string" ){
+    return "";
+  }
+  let cleanOrder1=order.trim();
+  if (cleanOrder1.length===0){
+    return "";
+  }
+    return cleanOrder1.toUpperCase()
 }
 
 export function whisperChaiOrder(order) {
   // Your code here
+  if (typeof order!=="string"){
+    return ""
+  }
+  let cleanOrder2=order.trim();
+  if(cleanOrder2.length===0){
+    return ""
+  }
+  return cleanOrder2.toLowerCase()
 }
 
 export function hasSpecialIngredient(order, ingredient) {
-  // Your code here
+  if (typeof order !== "string" || typeof ingredient !== "string") {
+    return false;
+  }
+
+  let cleanOrder3 = order.trim().toLowerCase();
+  let cleanIngredient = ingredient.toLowerCase();
+
+  return cleanOrder3.includes(cleanIngredient);
 }
+
 
 export function getFirstAndLastChar(order) {
   // Your code here
+  if( typeof order!=="string"){
+    return null;
+  }
+  let orderdetail=order.trim();
+   if(orderdetail.length
+    ===0){
+    return null;
+  }
+    return {
+      first:orderdetail.charAt(0),
+      last:orderdetail.at(-1)
+    }
 }
+console.log(getChaiOrderLength("Masala CHai"));
+
