@@ -76,7 +76,6 @@ export function createThaliDescription(thali) {
 
 export function getThaliStats(thalis) {
   // Your code here
-  export function getThaliStats(thalis) {
   if (!Array.isArray(thalis) || thalis.length === 0) {
     return null;
   }
@@ -104,7 +103,6 @@ export function getThaliStats(thalis) {
     costliest,
     names
   };
-}
 }
 
 export function searchThaliMenu(thalis, query) {
