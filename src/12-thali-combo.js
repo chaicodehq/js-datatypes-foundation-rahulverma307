@@ -52,9 +52,7 @@
  *   createThaliDescription({name:"Rajasthani Thali", items:["dal"], price:250, isVeg:true})
  *   // => "RAJASTHANI THALI (Veg) - Items: dal - Rs.250.00"
  */
-export function createThaliDescription(thali) {
-  // Your code here
-  export function createThaliDescription(thali) {
+export function createThaliDescription(thali)  {
   if (
     typeof thali !== "object" || thali === null ||
     typeof thali.name !== "string" ||
@@ -72,7 +70,7 @@ export function createThaliDescription(thali) {
 
   return `${name} (${type}) - Items: ${items} - Rs.${price}`;
 }
-}
+
 
 export function getThaliStats(thalis) {
   // Your code here
