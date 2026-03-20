@@ -98,6 +98,7 @@ export function getFirstAndLastChar(order) {
    if(orderdetail.length
     ===0){
     return null;
+    
   }
     return {
       first:orderdetail.charAt(0),

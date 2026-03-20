@@ -46,23 +46,44 @@
  *   addToCart(["tamatar", "pyaaz"], "mirchi")        // => 3
  *   addUrgentItem(["pyaaz"], "dhaniya")              // => ["dhaniya", "pyaaz"]
  *   removeLastItem(["tamatar", "pyaaz", "mirchi"])   // => "mirchi"
+ *  
  */
 export function addToCart(cart, item) {
   // Your code here
+  if(!Array.isArray(cart)) return -1;
+  if(item === "" || typeof item !=="string" ){
+    return cart.length
+  }
+    return cart.push(item)
 }
+addToCart(["momo","panner momo",],"burger")
 
 export function addUrgentItem(cart, item) {
   // Your code here
+  if( typeof item !== "string" || item === "") return cart;
+  if(!Array.isArray(cart)) return [];
+  
+   cart.unshift(item)
+   return  cart
+  
 }
+console.log(addUrgentItem(["pyaaz","ttamatar"],"dhaniya"));
 
 export function removeLastItem(cart) {
   // Your code here
+  if(!Array.isArray(cart) || cart.length===0)  return undefined;
+  return cart.pop()
 }
 
 export function isInCart(cart, item) {
   // Your code here
-}
+  if(!Array.isArray(cart)) return false;
+   return cart.includes(item)
 
+}
 export function mergeCarts(cart1, cart2) {
   // Your code here
+  if(!Array.isArray(cart1)) cart1=[]
+   if(!Array.isArray(cart2)) cart2=[]
+   return cart1.concat(cart2)
 }

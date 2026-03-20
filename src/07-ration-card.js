@@ -52,22 +52,54 @@
  *   hasRationCard({"RC001":{...}}, "RC001") // => true
  *   removeRationCard(registry, "RC001")    // => true
  */
+
 export function getFamilyNames(registry) {
   // Your code here
+  if(typeof registry !=="object" || registry === null || Array.isArray(registry)) return []
+    let IDs= Object.keys(registry)
+    return IDs
 }
 
 export function getAllFamilies(registry) {
   // Your code here
+  if(typeof registry !== "object" || registry === null ) return [];
+   let family =Object.values(registry)
+   return family
 }
 
 export function getRationCardEntries(registry) {
   // Your code here
+  if(typeof registry !== "object" || registry ===null) return [];
+   let pairs= Object.entries(registry)
+   return pairs
+
 }
 
 export function hasRationCard(registry, cardId) {
-  // Your code here
+  if(typeof registry !=="object" || typeof cardId !== "string" || registry === null || Array.isArray(registry) ) return false;
+   return registry.hasOwnProperty(cardId)
 }
+
+/***
+ *  5. removeRationCard(registry, cardId)
+ *      - delete operator se ration card remove karo
+ *      - Pehle hasOwnProperty se check karo ki card hai ya nahi
+ *      - Return true agar card tha aur delete hua, false otherwise
+ *      - Agar registry object nahi hai ya cardId string nahi hai, return false
+ *      - Example: removeRationCard({"RC001":{head:"Ram"}}, "RC001") => true
+ *
+ * Hint: typeof registry === "object" && registry !== null && !Array.isArray(registry)
+ *   se check karo ki input valid object hai.
+ */
 
 export function removeRationCard(registry, cardId) {
   // Your code here
+  if(typeof registry !== "object" || typeof cardId !== "string" || registry === null || Array.isArray(registry)){
+    return false
+  };
+  if(registry.hasOwnProperty(cardId)){
+    delete registry[cardId]
+    return true
+  }
+    return false
 }

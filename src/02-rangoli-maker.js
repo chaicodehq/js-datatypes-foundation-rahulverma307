@@ -83,7 +83,7 @@ export function replaceRangoliColor(design, oldColor, newColor) {
 export function makeRangoliBorder(char, length) {
   // Your code here
   if(typeof char!=="string" || typeof length!=="number" || length<=0 ){
-    return ""
+    return "";
   }
    let repeated=char.repeat(length)
     return repeated.slice(0,length);

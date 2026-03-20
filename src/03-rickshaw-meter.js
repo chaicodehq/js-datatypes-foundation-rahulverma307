@@ -89,6 +89,7 @@ export function findCheapestAndCostliest(...fares) {
   const valid = fares.filter(f => typeof f === "number" && !isNaN(f));
   if (valid.length === 0) {
     return null;
+    
   }
   return {
     cheapest: Math.min(...valid),
